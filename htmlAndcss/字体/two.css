@@ -1,0 +1,12 @@
+@font-face {
+    font-family: '我的字体';
+    src: url(./font/FZSTK.TTF), url(./font/STCAIYUN.TTF);
+    /* 默认使用第一个 */
+}
+
+p {
+    color: red;
+    font-size: 50px;
+    font-family: '我的字体', '微软雅黑';
+    /* 第一个没有使用第二个 */
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(location.search);
+        //截取字符串函数 substr（‘起始的位置’，‘截取几个字符’）
+        var parm = location.search.substr(1); //去掉?,得到uname = any，发送页面输入的值为any
+        //利用split函数通过‘=’把字符串分割为数组：split('=');
+        var arr = parm.split('=');
+        div.innerHTML = '欢迎回来' + arr[1];
+    </script>
+</body>
+
+</html>

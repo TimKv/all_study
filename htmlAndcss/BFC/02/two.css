@@ -1,0 +1,22 @@
+.one,
+.two {
+    height: 100px;
+    width: 100px;
+}
+
+.one {
+    background-color: skyblue;
+    float: left;
+}
+
+.two {
+    background-color: slateblue;
+    overflow: hidden;
+}
+
+.new {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    margin-top: 10px;
+}

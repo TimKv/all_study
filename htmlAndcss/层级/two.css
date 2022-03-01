@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.one,
+.two,
+.three {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.one {
+    background-color: burlywood;
+    position: absolute;
+    z-index: 1;
+}
+
+.two {
+    background-color: rgba(255, 218, 0, .5);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 3;
+}
+
+.three {
+    background-color: cadetblue;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    z-index: 2;
+}
+
+.within {
+    background-color: orange;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+
+/* 父元素层级再高也不会盖住子元素 */

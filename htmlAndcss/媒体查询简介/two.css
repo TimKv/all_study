@@ -1,0 +1,21 @@
+/* 媒体查询
+语法：@media 查询规则（） 
+媒体类型 ：
+all所有设备
+print打印设备
+screen带屏幕设备如电脑和手机
+speech屏幕阅读器
+*/
+
+@media screen,
+speech {
+    body {
+        background-color: green;
+    }
+}
+
+@media only screen {
+    body {
+        background-color: green;
+    }
+}

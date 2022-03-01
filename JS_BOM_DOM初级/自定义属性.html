@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-index="20" class="one" data-list-time-name="any"></div>
+    <!-- h5规定自定义属性data-开头作为属性名并赋值 -->
+</body>
+<script>
+    var div = document.querySelector('.one');
+    console.log(div.getAttribute('data-index'));
+    console.log(div.setAttribute('data-newindex', '10'));
+    console.log(div.getAttribute('data-newindex'));
+
+    //以下只支持ie11
+    console.log(div.dataset.index);
+    console.log(div.dataset);
+    console.log(div.dataset['newindex']);
+
+    //多个链接单词采取驼峰命名法获取
+    console.log(div.dataset.listTimeName);
+    console.log(div.dataset['listTimeName']);
+</script>
+
+</html>

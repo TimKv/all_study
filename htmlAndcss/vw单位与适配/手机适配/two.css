@@ -1,0 +1,22 @@
+/* 1rem = 1html的字体大小 
+0.133333vw=1px*/
+
+
+/* html字体最小要12px所以0.13333要乘100 
+后续使用rem*/
+
+html {
+    font-size: 13vw
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.one {
+    height: 2rem;
+    width: 2rem;
+    background-color: red;
+}

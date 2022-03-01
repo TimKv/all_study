@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+table td {
+    width: 200px;
+    border: 1px blanchedalmond solid;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table thead {
+    font-style: italic;
+    font-weight: bold;
+}

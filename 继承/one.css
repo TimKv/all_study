@@ -1,0 +1,24 @@
+p::first-letter {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+p::first-line {
+    color: red;
+    background-color: cornsilk;
+}
+
+p::selection {
+    color: darkblue;
+    background-color: red;
+}
+
+p::before {
+    content: '*"';
+    color: darkgray;
+}
+
+p::after {
+    content: '"*';
+    color: darkgray;
+}

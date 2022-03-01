@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.box1,
+.box2,
+.box {
+    height: 200px;
+    width: 200px;
+}
+
+.box {
+    background-color: aquamarine;
+}
+
+.box1 {
+    background-color: bisque;
+    position: relative;
+    /*相对于box1的原位置*/
+    top: 220px
+}
+
+.box2 {
+    background-color: cadetblue;
+    top: 200px/*没设置relative就没效果*/
+}

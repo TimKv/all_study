@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.box1,
+.box2,
+.box {
+    height: 200px;
+    width: 200px;
+}
+
+.box {
+    background-color: aquamarine;
+}
+
+.all {
+    background-color: red;
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.box1 {
+    background-color: bisque;
+    position: absolute;
+    top: 50%;
+    /*相对于包含块定位*/
+    /*子随父定*/
+}
+
+.box2 {
+    background-color: cadetblue;
+    width: 150px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

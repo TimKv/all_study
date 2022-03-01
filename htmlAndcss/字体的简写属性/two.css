@@ -1,0 +1,15 @@
+@font-face {
+    font-family: '我的字体';
+    src: url(./font/FZSTK.TTF), url(./font/STCAIYUN.TTF);
+    /* 默认使用第一个 */
+}
+
+div {
+    color: red;
+    font-size: 50px;
+    font: italic bold 50px/10 '我的字体', '微软雅黑';
+    /* 不写/10不代表没设置行高，行高为/1 */
+    /* italic表示斜体 */
+    /* 第一个没有使用第二个 */
+    border: red 1px solid;
+}

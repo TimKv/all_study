@@ -1,0 +1,43 @@
+.one {
+  height: 200px;
+  width: 200px;
+  margin: 200px auto;
+  background-color: red;
+}
+.two {
+  height: 200px;
+  width: 200px;
+  margin: 200px auto;
+  background-color: red;
+}
+.two > .one {
+  background-color: blue;
+  height: calc(200px/2);
+  width: calc(200px/2);
+}
+.two:hover {
+  background-color: blue;
+}
+.two:hover > .one {
+  background-color: red;
+}
+.one01,
+.two01 {
+  height: 200px;
+  width: 200px;
+  margin: 200px auto;
+  background-color: red;
+}
+.two01 {
+  background-color: blue;
+}
+.one02,
+.two02 {
+  height: 200px;
+  width: 200px;
+  margin: 200px auto;
+  background-color: red;
+}
+.two02 {
+  background-color: blue;
+}

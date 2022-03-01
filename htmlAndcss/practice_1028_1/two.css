@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    margin: 10px 10px;
+    background-color: blue;
+    border-radius: 10px;
+    border-bottom-left-radius: 30px;
+}
+
+.one:hover {
+    outline: red 10px solid;
+    box-shadow: 30px 30px 10px black;
+}
+
+.one::after {
+    content: "one";
+}

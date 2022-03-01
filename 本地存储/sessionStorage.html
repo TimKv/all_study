@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="del">清空所有数据</button>
+    <script>
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del');
+        //sessionStorage的生命周期关掉窗口就结束了,页面刷新不影响
+        set.addEventListener('click', function() {
+            //当我们点击之后，就把表单里的值存储起来
+            //并且数据不会因为页面刷新消失
+            //seesionStorage.setItem(a,b)
+            //a是为数值设置的key键，b是数据
+            var val = ipt.value
+            sessionStorage.setItem('uname', val);
+        });
+        get.addEventListener('click', function() {
+            //点击后获取key为uname的数据
+            var n = sessionStorage.getItem('uname');
+            console.log(n);
+        });
+        remove.addEventListener('click', function() {
+            //点击后删除key为uname的数据
+            sessionStorage.removeItem('uname');
+        });
+        del.addEventListener('click', function() {
+            //点击后全部删除
+            sessionStorage.clear();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .one {
+        background-color: red;
+        width: 100px;
+        height: 50px;
+        color: aquamarine;
+    }
+    
+    .two,
+    .three {
+        background-color: red;
+        color: aquamarine;
+        text-align: center;
+        float: left;
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+    <button class="one">点击显示时间</button>
+
+    <div class="two">现在时间</div>
+    <p class="three">现在时间</p>
+    <div id="zere">xianzai</div>
+
+    <script>
+        function getData() {
+            var date = new Date();
+            var year = date.getFullYear();
+            return date;
+        }
+        var one1 = document.getElementsByClassName("one");
+        var two1 = document.getElementsByClassName("two");
+
+        one1[0].onclick = function() {
+            two1[0].innerText = getData();
+        }
+
+        //不添加事件
+
+        var three1 = document.getElementsByClassName("three");
+        three1[0].innerText = getData();
+
+        //innertext和innerHtml一个不获取HTML标签，一个获取
+        var zero = document.getElementById("zere");
+        //获取zere里的数据
+        alert(zere.innerText);
+        //修改
+        alert((zere.innerText = '09877'));
+    </script>
+</body>
+
+</html>

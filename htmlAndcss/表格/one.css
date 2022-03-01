@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.one {
+    border: 1px paleturquoise solid;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.one td {
+    border: 1px paleturquoise solid;
+}

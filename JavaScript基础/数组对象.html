@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var arr1 = new Array();
+    var arr2 = new Array(2);
+    var arr3 = new Array(2, 3)
+
+    //检查是否为数组
+    var arr = [];
+    var ar = {};
+    console.log(arr instanceof Array);
+    console.log(ar instanceof Array);
+    console.log(Array.isArray(arr))
+    console.log(Array.isArray(ar))
+
+    //数组尾为添加元素
+    var one = [1, 2, 3];
+    one.push(4, 5, 'one');
+    console.log(one)
+    console.log(one.push())
+
+    //数组头为添加元素
+    console.log(one.unshift('start'))
+    console.log(one)
+
+    //删除最后元素，返回值为已删除元素
+    one.pop()
+    console.log(one)
+    one.shift()
+    console.log(one)
+
+    //数组排序（冒泡）
+    var two = [2, 1, 4, 3, 5]
+    two.sort(function(a, b) {
+            return a - b //升序 b-a降序
+        }
+
+    );
+    console.log(two)
+
+    //元素索引
+    var one1 = ['one', 'two', 'zero', 'one'];
+    console.log(one1.indexOf('one'))
+    console.log(one1.lastIndexOf('one'))
+
+    //转换为字符串
+    var one2 = [1, 2, 34, 5]
+    console.log(one2.toString())
+    console.log(one1.join())
+    console.log(one1.join('-'))
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        //检查用户是否输入s输入的话就把光标定位到搜索栏里
+        //使用keyCode判断按键ascll码是不是s的ascll码：83
+        //使用foucs（）方法获得焦点
+        //把keyup改成keydown,s就会进入输入框
+        //但keycode已经被弃用建议使用key
+        var seach = document.querySelector('input');
+        document.addEventListener('keyup', function(e) {
+            // if (e.key === 83) {
+            //     seach.focus();
+            // }
+            if (e.key == 's') {
+                seach.focus();
+            }
+        })
+
+        //但keycode已经被弃用建议使用key
+    </script>
+</body>
+
+</html>

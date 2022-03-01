@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var str = 'qweqweqwe';
+    console.log(str.indexOf('w'));
+    console.log(str.indexOf('w', 4)) //从索引4往后查找
+
+    //根据位置返回字符
+    console.log(str.charAt(3));
+    //返回ASCLL码
+    console.log(str.charCodeAt(0));
+
+    console.log(str[0]);
+
+    //拼接字符串
+    console.log(str.concat('我'));
+
+    //截取字符串
+    console.log(str.substr(3, 4));
+
+    //替换
+    //只替换第一个
+    console.log(str.replace('q', 'z'));
+    //转换为数组
+    var str1 = 'red,pink,new'
+    console.log(str1.split(','));
+    var str2 = 'red&pink&new'
+    console.log(str1.split('&'));
+
+    //替换大小写 toUpperCase() toLowerCase()
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(11); //同步任务
+        setTimeout(function() { //回调函数function属于异步任务
+            console.log(22);
+
+        }, 0);
+        console.log(33); //同步任务
+
+        //定时器与事件和资源加载等都属于异步任务
+        //js中主线程执行栈存放同步任务，任务队列存放异步任务
+        //js执行中会先执行主线程执行栈的同步任务，再执行任务队列里的异步任务
+        //所有的回调函数都会进入任务队列如function
+
+        //js会不断的去看任务队列里有没有任务，有的话放到主线程执行栈里执行，这个称为事件循环
+        //例子如下
+        console.log(1);
+        document.onclick = function() {
+            console.log('click');
+            //处于事件循环中，点击一下就有一个console.log('click')进入任务队列
+            //而因为事件循环，js会不断的看任务队列里有没有任务
+            //当看到有任务就会把其放入主线程执行栈里进行执行
+            //这就是事件循环
+        }
+        console.log(2);
+        setTimeout(function() {
+            console.log(3)
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

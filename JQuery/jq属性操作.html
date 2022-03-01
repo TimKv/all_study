@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" title="now"></a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="1">div</div>
+    <span>123</span>
+</body>
+<script>
+    $(function() {
+        //prop只能获取固有属性不能获取自定义属性
+        console.log($('a').prop('href'));
+        $('input').change(function() {
+            console.log($(this).prop('checked'));
+        });
+        //attr()可以获取自定义属性
+        console.log($('div').attr('index'));
+        $('div').attr('index', 4)
+            //data（）存储在内存
+        $('span').data('uname', 'andy');
+        console.log($('span').data('uname'));
+        //获取自定义属性不需要加data-
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+body {
+    perspective: 800px;
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    background-color: beige;
+    margin: 50px auto;
+    /* transform: translateZ(100px); */
+    transition: transform 2s;
+}
+
+.two {
+    width: 200px;
+    height: 200px;
+    background-color: beige;
+    margin: 50px auto;
+    transform-style: preserve-3d;
+    /* 设置3d平移效果 */
+    /* transform: translateZ(100px); */
+    transition: transform 2s;
+}
+
+.three {
+    width: 200px;
+    height: 200px;
+    background-image: url(/htmlAndcss/移动动画/bird.png);
+    margin: 50px auto;
+    transform-style: preserve-3d;
+    /* 设置3d平移效果 */
+    /* transform: translateZ(100px); */
+    transition: transform 2s;
+}
+
+.one:hover {
+    /* transform: translateZ(200px); */
+    transform: rotateZ(135deg);
+    /* 一圈turn */
+}
+
+.two:hover {
+    /* transform: translateZ(200px); */
+    transform: rotateX(40deg) translateZ(200px);
+    /*先旋转再移动 */
+}
+
+.three:hover {
+    /* transform: translateZ(200px); */
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    /* 背面不显示 */
+}
+
+
+/* 需要设置视距才能显示z轴的平移效果 */

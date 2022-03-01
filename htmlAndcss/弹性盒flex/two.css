@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul {
+    margin: 20px auto;
+    width: 600px;
+    border: 10px red solid;
+    display: flex;
+    /* 弹性容器 */
+    flex-direction: row;
+    /* 弹性容器的排列方向
+    row水平从左向右
+    row-reverse右向左
+    coulumn 上向下
+     coulumn-reverse相反*/
+}
+
+li {
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    font-size: 50px;
+    text-align: center;
+    flex-grow: 1;
+    /* 伸展系数 */
+    /* flex-shrink: 1; */
+    /* 收缩系数默认1，0不收缩 */
+}
+
+li:nth-child(2) {
+    background-color: cornsilk;
+    flex-grow: 2;
+}
+
+li:nth-child(3) {
+    background-color: cyan;
+    flex-grow: 3;
+}

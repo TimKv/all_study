@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style></style>
+
+<body>
+
+
+</body>
+<script>
+    $(function() {
+        // var one = {};
+        // var obj = {
+        //     id: 1,
+        //     name: "name"
+        // };
+        // $.extend(one, obj);
+        // console.log(one);
+
+        //有内容拷贝会覆盖
+        var one = {
+            id: 0,
+            masg: {
+                age: 20,
+                sex: '男'
+            }
+        };
+        var obj = {
+            id: 2,
+            name: "name",
+            masg: {
+                age: 18
+            }
+        };
+        //浅拷贝因为给的是地址，所有更改拷贝对象的复杂类型，原始对象的复杂类型也会改
+        // $.extend(one, obj);
+        // console.log(one);
+        // one.masg.age = 20
+        // console.log(one);
+        // console.log(obj);
+
+        // 深拷贝拷贝的是数值而不是地址，会覆盖age
+        $.extend(true, one, obj);
+        console.log(one);
+        console.log(one);
+        console.log(obj);
+
+    })
+</script>
+
+</html>

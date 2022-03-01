@@ -1,0 +1,36 @@
+/* 当视口宽度大小为500px使执行body 
+height高度
+min-width视口最小宽度
+max-width视口最大宽度*/
+
+
+/* @media(width:500px) {
+    body {
+        background-color: aquamarine;
+    }
+} */
+
+
+/* 
+小于768
+大于768
+大于992
+大于1200
+*/
+
+
+/* @media not (min-width:500px) and (max-width:700px) {
+    body {
+        background-color: aquamarine;
+    }
+} 
+
+
+not表示出了他们以外
+*/
+
+@media(min-width:500px) and (max-width:700px) {
+    body {
+        background-color: aquamarine;
+    }
+}

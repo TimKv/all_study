@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+div {
+    width: 1000px;
+    border: 1px red solid;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    /* left right  justify左对齐右对齐两端对齐*/
+}
+
+span {
+    font-size: 20px;
+    border: 1px red solid;
+    vertical-align: 200px;
+    /* baseline默认的基线对齐
+    top顶部对齐
+    bottom底部对齐
+    middle居中对齐*/
+}
+
+img {
+    border: 1px red solid;
+    vertical-align: middle;
+    /* 当图片与边框之间有缝隙这样可以去掉缝隙 */
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .m {
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        .banner {
+            height: 100px;
+            background-color: green;
+        }
+        
+        .main1 {
+            height: 1000px;
+            background-color: blue;
+        }
+        
+        .main2 {
+            height: 1000px;
+            background-color: blue;
+        }
+        
+        .sliderBar {
+            height: 150px;
+            width: 60px;
+            background-color: orangered;
+            border-radius: 10px;
+            position: absolute;
+            top: 300px;
+            right: 0;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sliderBar">
+        <div class="content" style="color: aliceblue;">主页1</div>
+        <div class="goBack" style="cursor: pointer;display: none;">回顶部</div>
+    </div>
+    <div class="header m">头部区域</div>
+    <div class="banner m">banner区域</div>
+    <div class="main1 m">主体部分1</div>
+    <div class="main2 m">主体部分2</div>
+</body>
+<script>
+    var sliderbar = document.querySelector('.sliderBar');
+    var banner = document.querySelector('.banner');
+    console.log(banner.offsetTop);
+    var starSliderbar = sliderbar.offsetTop;
+    var bannerTop = banner.offsetTop;
+    console.log('this' + starSliderbar);
+    //计算：侧边栏的offsetTop-banner区域的offsetTop
+    var sliderbarTop = sliderbar.offsetTop - bannerTop;
+
+    var main = document.querySelector('.main2');
+    var goBack = document.querySelector('.goBack');
+    var mainTop = main.offsetTop;
+
+    document.addEventListener('scroll', function() {
+        console.log(window.pageYOffset);
+        if (window.pageYOffset >= bannerTop) {
+            sliderbar.style.position = 'fixed';
+            //这样就不会出现触发侧边栏固定时向下跳一段距离
+            sliderbar.style.top = sliderbarTop + 'px';
+        } else {
+            sliderbar.style.position = 'absolute';
+            //到达原始位置时，把top改为最初值
+            sliderbar.style.top = starSliderbar + 'px';
+        }
+        if (window.pageYOffset >= mainTop) {
+            goBack.style.display = 'block';
+        } else {
+            goBack.style.display = 'none';
+        }
+
+    })
+
+    //点击了返回顶部回到顶部
+    //window.scoll(x,y)滚动窗口至文档中的特定位置
+    goBack.addEventListener('click', function() {
+        // window.scroll(0, 0);
+        //因为是窗口滚动，所有对象是window
+        animate(window, 0)
+    });
+
+    //引入动画函数并修改
+    //通过window.pageYOffset获取滚动的距离，替换所有的obj.offsetLeft
+    function animate(obj, target, callback) {
+        var time = null;
+        clearInterval(obj.time);
+        obj.time = setInterval(function() {
+            //将步长值写到定时器的里面
+            //step会慢慢变小
+            //把步长改为整数，不要出现小数问题
+            //往上取整函数math.ceil()
+            //通过以下一行代码可以实现点击800后点500，方块会返回，因为500-800就为负数了
+
+            var step = (target - window.pageYOffset) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            //大于0向上取值，小于0向下取值，解决从800到500的bug和点击500到的却是495左右的bug
+
+            if (window.pageYOffset == target) {
+                clearInterval(obj.time);
+                //回调函数写在这
+                // if (callback) { //判断有没有回调函数
+                //     callback();
+                // }
+                callback && callback(); //效果与上方if效果一致
+                //因为&&当左侧为false就直接结束不看右边了，为true则会执行右边
+            }
+            // obj.style.left = window.pageYOffset + step + 'px';
+            window.scroll(0, window.pageYOffset + step)
+        }, 15);
+    }
+</script>
+
+</html>

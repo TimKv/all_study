@@ -1,0 +1,38 @@
+table {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    /* border-spacing: 0; 设置边框的距离*/
+    border-collapse: collapse;
+    /* 设置边框合并 */
+}
+
+table td {
+    border: 1px red solid;
+    vertical-align: middle;
+    text-align: center;
+    /* td专属控制位置 */
+}
+
+tr:nth-child(2n+1) {
+    background-color: rosybrown;
+}
+
+tbody>tr>td:nth-child(2n+1) {
+    background-color: rosybrown;
+}
+
+.one {
+    width: 400px;
+    height: 400px;
+    background-color: sandybrown;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.two {
+    width: 100px;
+    height: 100px;
+    background-color: seagreen;
+    margin: 0 auto;
+}

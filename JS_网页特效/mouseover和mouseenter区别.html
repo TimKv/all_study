@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .father {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        background-color: aquamarine;
+    }
+    
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="box"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var box = document.querySelector('.box');
+        //mouseenter配合mouseleave
+        //mouseover会冒泡所以当不是经过自身盒子经过子盒子也会触发
+        //mouseenter不会冒泡，所有子盒子不会触发
+        father.addEventListener('mouseenter', function() {
+            console.log(11);
+        });
+        father.addEventListener('mouseover', function() {
+            console.log(22);
+        });
+        //放在父盒子上再在父盒子中移入子盒子，就可以看到效果
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #one {
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    <button id="btn">one</button>
+
+    <div id="one">two</div>
+
+    <div class="two1">three</div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            alert('one');
+        }
+
+        var fu1 = document.getElementById('one');
+        fu1.onclick = function() {
+            for (var i = 0; i <= 10; i++)
+                console.log('two' + i);
+        }
+
+        var fu2 = document.getElementsByClassName('two1');
+        fu2[0].onclick = function() {
+                console.log('two');
+            } //getElementsByClassName获取的是一个数组，要用数组的样式添加事件
+    </script>
+</body>
+
+</html>

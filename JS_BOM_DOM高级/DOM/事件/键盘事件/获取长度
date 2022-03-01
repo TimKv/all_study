@@ -1,0 +1,1 @@
+var len = Object.keys(this.value).length //当数值的长度，当大于11隐藏

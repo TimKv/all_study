@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function one(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sing = function() {
+            console.log('hi')
+        }
+    }
+
+    var newone = new one('one', 12, 'f');
+    console.log(newone.name)
+    newone.sing();
+    console.log(newone)
+    console.log('遍历对象')
+
+    for (var k in newone) {
+        console.log(k)
+        console.log(newone[k])
+
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

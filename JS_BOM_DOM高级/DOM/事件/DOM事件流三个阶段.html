@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .father {
+        width: 400px;
+        height: 400px;
+        background-color: aquamarine;
+        position: relative;
+        margin: 100px auto;
+    }
+    
+    .son {
+        height: 200px;
+        width: 200px;
+        top: 25%;
+        left: 25%;
+        position: absolute;
+        background-color: blanchedalmond;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son">
+        </div>
+    </div>
+</body>
+<script>
+    //捕获阶段.addEventListener第三个参数为true处于捕获阶段
+    //顺序 document->html->body->father->son
+    // var son = document.querySelector('.son');
+    // son.addEventListener('click', function() {
+    //     alert('son');
+    // }, true);
+    // var father = document.querySelector('.father');
+    // father.addEventListener('click', function() {
+    //     alert('father');
+    // }, true);
+    //以上为true的演示
+    //冒泡阶段.addEventListener第三个参数为false或不写处于冒泡阶段
+    //顺序 son->father->body->html->document
+    var son = document.querySelector('.son');
+    son.addEventListener('click', function() {
+        alert('son');
+    }, false);
+    var father = document.querySelector('.father');
+    father.addEventListener('click', function() {
+        alert('father');
+    }, false);
+    document.addEventListener('click', function() {
+        alert('docment');
+    }, false);
+</script>
+
+</html>

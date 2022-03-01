@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //立即执行函数不需要调用，立即就能自己执行
+        function fun() {
+            console.log(11);
+        }
+        fun();
+        //两种写法 (function(){})()或(function(){}()),可以传递参数
+        //第一种
+        (function(a, b) {
+            console.log(22);
+            console.log(a + b);
+        })(1, 2); //第二个小括号可以看做是调用函数也就是：fun（）
+
+
+        //第二种写法
+        (function(a, b) {
+            console.log(a + b);
+        }(2, 3));
+        //上面也能写成这样，加个名字
+        (function sum(a, b) {
+            console.log(a + b);
+        }(2, 3));
+        //立即执行函数里声明的变量全是局部变量
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style>
+    .father {
+        width: 400px;
+        height: 400px;
+        background-color: aquamarine;
+        position: relative;
+    }
+    
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+
+</body>
+<script>
+    $(function() {
+        //offset() position() scrollTop() scrollLeft()
+
+        // offset获取距离文档位置
+        console.log($('.son').offset());
+        console.log($('.son').offset().top);
+        //修改
+        $('.son').offset({
+            top: 200,
+            left: 200
+        });
+        //获取距离带有定位父级位置position
+        //距离父亲位置，没父亲就是window
+        //不能设置，只能获取
+        console.log($('.son').position());
+
+
+    })
+</script>
+
+</html>

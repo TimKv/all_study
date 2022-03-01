@@ -1,0 +1,23 @@
+.one {
+    width: 200px;
+    height: 200px;
+    background-color: bisque;
+    animation-name: test;
+    animation-duration: 2s;
+    /* 持续时间 */
+    animation-delay: 2s;
+    /* 延时 */
+    animation-iteration-count: 5;
+    /*执行次数 infinite无限次 */
+}
+
+@keyframes test {
+    /* 冲0px到600px */
+    from {
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 600px;
+    }
+    
+}

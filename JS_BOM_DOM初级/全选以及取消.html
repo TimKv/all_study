@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>全选</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>one</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>two</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>tree</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>free</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var all_one = document.querySelector('thead').querySelector('tr').querySelector('input');
+    var one = document.querySelector('tbody').querySelectorAll('input');
+    all_one.onclick = function() {
+        for (var i = 0; i < one.length; i++) {
+            one[i].checked = this.checked;
+        }
+
+        for (var i = 0; i < one.length; i++) {
+
+            one[i].onclick = function() {
+                var flag = true; //每次点击one的框，flag就会刷新
+
+                for (var i = 0; i < one.length; i++) {
+                    if (!this.checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                console.log(flag);
+                all_one.checked = flag;
+            }
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+        position: relative;
+    }
+    
+    span {
+        float: left;
+        position: relative;
+    }
+    
+    button {
+        margin-top: 100px;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div></div>
+    <span>文在否</span>
+    <button>div移动</button>
+    <script>
+        //obj.time给不同的元素指定不同的定时器
+        //解决点击事件不断加速，让元素只有一个定时器
+        function animate(obj, target) {
+            clearInterval(obj.time);
+            obj.time = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(time)
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 30);
+        }
+
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        div.name = 'aaaa';
+        btn.onclick = function() {
+            animate(div, 300);
+        }
+
+        animate(span, 200)
+    </script>
+
+</body>
+
+</html>

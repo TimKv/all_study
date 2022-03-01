@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box {
+    background-color: cadetblue;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.box01 {
+    background-color: greenyellow;
+    width: 200px;
+    height: 200px;
+    float: left;
+}

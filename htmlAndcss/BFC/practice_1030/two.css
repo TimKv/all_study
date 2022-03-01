@@ -1,0 +1,20 @@
+.all {
+    border: red 10px solid;
+    overflow: hidden;
+}
+
+.one,
+.two {
+    height: 100px;
+    width: 100px;
+}
+
+.one {
+    background-color: skyblue;
+    float: left;
+}
+
+.two {
+    background-color: slateblue;
+    float: left;
+}

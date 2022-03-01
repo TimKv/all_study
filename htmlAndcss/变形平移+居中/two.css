@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    /* margin: 0 auto; */
+}
+
+.one {
+    transform: translateX(200px);
+    /* 平移不会影响别的元素 */
+}
+
+
+/* 利用移动变换居中 */
+
+.two {
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    background-image: url(/htmlAndcss/移动动画/bird.png);
+    position: absolute;
+    /* left: 50%;
+    top: 50%; */
+    /* transform: translateX(-50%) translateY(-50%); */
+    /* transition: transform .3s; */
+    transition: all .3s;
+}
+
+
+/* 窗口浮动效果 */
+
+.two:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 0 10px black;
+}

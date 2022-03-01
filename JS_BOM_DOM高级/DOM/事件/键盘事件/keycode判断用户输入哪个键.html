@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //keyCode可以获取对应键的ASCLL码值
+        //1.keyup和keydown事件不区大小写，a和A都是65
+        //2.keypress区分大小写
+
+        // document.addEventListener('keyup', function(e) {
+        //     console.log('keyup:' + e.keyCode);
+        //     if (e.keyCode === 65)
+        //         console.log('按下的是a');
+        // });
+
+        // document.addEventListener('keypress', function(e) {
+        //     console.log('keypress:' + e.keyCode);
+        // });
+
+        //但keycode已经被弃用建议使用key
+        document.addEventListener('keypress', function(e) {
+            console.log('key:' + e.key);
+        })
+    </script>
+</body>
+
+</html>

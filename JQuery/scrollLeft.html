@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 3000px;
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <div></div>
+
+</body>
+<script>
+    $(function() {
+        //被卷去的部分
+        $(window).scroll(function() {
+            //打印卷去部分
+            console.log($(document).scrollTop());
+        });
+
+    })
+</script>
+
+</html>

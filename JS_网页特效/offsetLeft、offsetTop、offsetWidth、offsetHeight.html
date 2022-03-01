@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .father {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+        margin-left: 100px;
+        margin-top: 100px;
+        float: left;
+        /* position: relative; */
+    }
+    
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(182, 127, 255);
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    
+    .w {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(127, 219, 255);
+        margin-left: 200px;
+        margin-top: 200px;
+        float: left;
+        border: 5px red solid;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+        //可动态获取大小
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        //他以带有定位的父元素（加position：relation等）为准，如果父元素没有定位或没父元素，则以body为准
+        //1.offsetTop和offsetLeft，可以获取元素与父元素的距离
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        console.log(son.offsetLeft);
+
+        //offsetWidth和offsetHeight，可以获得元素的宽度和高度
+        //2.boder和padding也可以影响这的值
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+
+        //3.返回带有定位的父亲，否则返回的是body
+        //offsetParent
+        console.log(son.offsetParent);
+        //返回最近一级的父亲，不管有没有定位
+        console.log(son.parentNode);
+    </script>
+
+</body>
+
+</html>

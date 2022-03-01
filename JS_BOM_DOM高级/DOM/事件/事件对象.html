@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <div>234</div>
+</body>
+<script>
+    //事件对象可以自己命名，如event和e,ie8兼容应该写成console.log（window.event）
+    //兼容封装函数: e = e||window.event; 
+    //console.log(e)
+    var div = document.querySelectorAll('div');
+    div[0].onclick = function(event) {
+        console.log(event)
+    }
+    div[1].onclick = function(e) {
+        console.log(e)
+    };
+    //一下有兼容问题，ie8以上可以
+    div[0].addEventListener('click', function(event) {
+        console.log(event)
+    })
+
+    div[0].addEventListener('click', function(e) {
+        console.log(e)
+    })
+</script>
+
+</html>

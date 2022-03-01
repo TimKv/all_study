@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.one {
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+}
+
+.two {
+    height: 100px;
+    width: 100px;
+    background-color: bisque;
+    transition: 2s linear;
+    /* all 全部变化都执行过渡可以改为height等
+    linear匀速运动 ease默认先慢速后加速 ease-in加速运动 ease-on减速 ease-in-on*/
+    /* transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    /*  */
+}
+
+.three {
+    height: 100px;
+    width: 100px;
+    background-color: bisque;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: steps(6);
+    /* 可以添加end或start steps（3，end）分别为3秒开始执行和3秒结束后执行 */
+}
+
+.one:hover .two {
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+    background-color: orange;
+}
+
+.one:hover .three {
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+    background-color: orange;
+}

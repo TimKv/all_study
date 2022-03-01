@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 转换为字符串
+    var one = 10;
+    one = one.toString();
+    alert(one + '')
+        // 转换为数值型
+    var one = 'one'
+    one = parseInt(one)
+        // 浮点型
+    one = parseFloat(one)
+    console.log(parseFloat('rem123')) //NaN
+    one = Number(one) //强制转换
+        // 隐式转换
+    console.log('123' - 0)
+        // 转换为boolean判断true和f
+    console.log(Boolean(one))
+</script>
+
+<body>
+
+</body>
+
+</html>

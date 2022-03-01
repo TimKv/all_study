@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 10px red solid;
+        padding: 14px;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        //client返回不包括边框的值,和offset的区别就是不包含边框
+        var div = document.querySelector('div');
+        console.log(div.clientWidth);
+        console.log(div.clientHeight);
+        console.log(div.clientTop);
+        console.log(div.clientLeft);
+    </script>
+
+</body>
+
+</html>

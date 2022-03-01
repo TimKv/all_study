@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(200deg, red 50px, yellow 120px, green 200px);
+    /* deg度数 */
+}
+
+.two {
+    width: 200px;
+    height: 200px;
+    background-image: repeating-linear-gradient( red 0px, yellow 50px);
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(red, green);
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-image: repeating-radial-gradient(50px 50px, red, green);
+}

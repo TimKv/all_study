@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    console.log(Math.PI);
+    console.log(Math.max(10, 20))
+    console.log(Math.abs(-9))
+    console.log(Math.floor(1.1))
+    console.log(Math.floor(1.9))
+    console.log(Math.ceil(1.9))
+    console.log(Math.ceil(1.1))
+        //四舍五入
+    console.log(Math.round(1.9))
+    console.log(Math.round(1.5))
+    console.log(Math.round(-1.9))
+    console.log(Math.round(-1.5))
+
+    var data = new Date();
+    console.log(data)
+
+    var date1 = new Date(2000, 1, 1)
+    console.log(date1)
+
+    var date2 = new Date('2000-10-1 8:8:8');
+    console.log(date2)
+
+    console.log(data.getFullYear())
+    console.log(data.getMonth() + 1)
+    console.log(data.getDate())
+    console.log(data.getDay()) //星期
+
+    //时分秒
+    console.log(data.getHours())
+    console.log(data.getMinutes())
+    console.log(data.getSeconds())
+
+    //总毫秒数 从1970.1.1
+    console.log(data.valueOf())
+    console.log(data.getTime())
+    var dataNum = +new Date();
+    console.log(dataNum)
+    console.log(Date.now())
+</script>
+
+<body>
+
+</body>
+
+</html>

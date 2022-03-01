@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    input {
+        color: gray;
+    }
+</style>
+
+<body>
+    <input type="text" value="输入">
+
+    <script>
+        var text = document.querySelector('input');
+
+        text.onfocus = function() {
+            if (this.value === '输入') {
+                this.value = '';
+            }
+            this.style.color = 'black';
+        }
+        text.onblur = function() {
+            if (this.value === '') {
+                this.value = '输入';
+            }
+            this.style.color = 'gray';
+        }
+    </script>
+</body>
+
+</html>

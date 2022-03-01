@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: red solid 1px;
+    }
+    
+    td {
+        border: red solid 1px;
+    }
+    
+    .change {
+        background-color: cadetblue;
+    }
+</style>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>one</td>
+                <td>two</td>
+                <td>three</td>
+                <td>four</td>
+            </tr>
+            <tr>
+                <td>one</td>
+                <td>two</td>
+                <td>three</td>
+                <td>four</td>
+            </tr>
+            <tr>
+                <td>one</td>
+                <td>two</td>
+                <td>three</td>
+                <td>four</td>
+            </tr>
+            <tr>
+                <td>one</td>
+                <td>two</td>
+                <td>three</td>
+                <td>four</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var trs = document.querySelector('tbody').querySelectorAll('tr');
+    for (var i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function() {
+            this.className = 'change';
+        }
+        trs[i].onpointerout = function() {
+            this.className = '';
+        }
+    }
+</script>
+
+</html>

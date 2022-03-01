@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <button>传统注册事件</button>
+    <button>可注册多个事件</button>
+    <button>不建议使用，ie9以前方法</button>
+</body>
+<script>
+    var btn = document.querySelectorAll('button');
+    btn[0].onclick = function() { //只能注册一个事件
+        alert('11');
+    }
+    btn[0].onclick = function() {
+        alert('22');
+    }
+
+    //可注册多个事件,ie9
+    btn[1].addEventListener('click', function() {
+        alert(33);
+    })
+    btn[1].addEventListener('click', function() {
+        alert(44);
+    })
+
+    //不建议使用，ie9以前方法,ie9以上已经不支持，了解即可
+    btn[2].attachEvent('onclick', function() {
+        alert(55);
+    })
+    btn[2].attachEvent('onclick', function() {
+        alert(66);
+    })
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">one</div>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <ol id='newol'>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>two</li>
+    </ol>
+
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+
+</body>
+<script>
+    //id选择
+    var one = document.getElementById('one');
+    console.log(one);
+
+    var list = document.getElementsByTagName('li');
+    console.log(list);
+    console.log(list[0]);
+    for (var i = 0; i < list.length; i++) {
+        console.log(list[i])
+    }
+
+    var ol = document.getElementsByTagName('ol');
+    console.log(ol[0].getElementsByTagName('li'))
+    console.log(ol[1].getElementsByTagName('li'))
+    var ol1 = document.getElementById('newol')
+    console.log(ol1.getElementsByTagName('li'))
+
+    //class选择
+    var box = document.getElementsByClassName('box');
+    console.log(box)
+
+
+    //返回的第一个选择对象
+    var FChange = document.querySelector('.box')
+    console.log(FChange)
+    var FChange1 = document.querySelector('#one')
+    console.log(FChange1)
+        //第一个li
+    var li = document.querySelector('li')
+    console.log(li)
+
+    //所有o
+    var allbox = document.querySelectorAll('.box')
+    console.log(allbox)
+
+    //获取html和body元素
+    var bodyEle = document.body;
+    console.log(bodyEle);
+    var htmlEle = document.documentElement;
+    console.log(htmlEle);
+    console.dir(htmlEle);
+</script>
+
+</html>

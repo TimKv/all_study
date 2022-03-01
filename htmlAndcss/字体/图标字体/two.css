@@ -1,0 +1,14 @@
+* {
+    list-style: none;
+}
+
+li {
+    font-size: 30px;
+    font-family: '隶书';
+}
+
+li::before {
+    content: '\f0f3';
+    font-family: 'Font Awesome 6 Free';
+    /* 在all.css中寻找 */
+}

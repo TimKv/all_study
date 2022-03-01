@@ -1,0 +1,44 @@
+.one {
+    /* background-repeat: ;
+    background-color: ;
+    background-image: ;
+    background-position: ;
+    background-size: ;
+    background-clip: ;
+    background-attachment: ;
+    background-origin: ; 
+    background 背景相关属性缩写可以设置说有背景属性*/
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+    background-image: url(./d_Visibility_Tool@4x.png);
+    background-repeat: repeat-y;
+    /* 沿着y轴重复 */
+    background-repeat: no-repeat;
+    /* 不重复 */
+    background-color: bisque;
+    /* background-position: right center; */
+    /* 更改背景图片位置 */
+    background-position: 20px 20px;
+    /*  更改背景图片位置*/
+    padding: 10px;
+    background-clip: content-box;
+    /* padding-box只会出现在内容区和内边距 */
+    /* content-box背景只会出现在内容区 */
+    border: 10px red double;
+    background-origin: border-box;
+    /* 更改背景图片原点 */
+    /* background-size: 200px 200px; */
+    /* 更改背景图片的大小 */
+    background-size: contain;
+    /* 完整显示图片 */
+}
+
+.two {
+    width: 100px;
+    height: 1000px;
+    background-image: url(./d_Visibility_Tool@4x.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* fixed 固定图片不会随着元素移动*/
+}

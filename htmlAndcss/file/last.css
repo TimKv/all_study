@@ -1,0 +1,14 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: lawngreen;
+    border: red 10px solid;
+}
+
+* {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}

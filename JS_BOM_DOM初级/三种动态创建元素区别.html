@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">one</div>
+    <div id="one1">123</div>
+    <button>one</button>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    btn.onclick = function() {
+        document.write('<div>111</div>') //如果页面文档留加载完毕，页面重绘
+    }
+
+    //innerHtml和document.createElement()创建元素
+    var one = document.querySelector('#one');
+    var one1 = document.querySelector('#one1');
+
+    one.innerHTML = '<a href =" javascript:;">b</a>'
+
+    var a = document.createElement('a');
+    one1.appendChild(a);
+
+    //批量生成div
+    function fun() {
+        var time1 = +new Date();
+
+        for (var i = 0; i < 1000; i++) {
+            var div = document.createElement('div');
+            div.style.width = '100px';
+            div.style.height = '2px';
+            div.style.border = '1px solid red';
+            document.body.appendChild(div);
+        }
+
+        var time2 = +new Date();
+        console.log(time2 - time1);
+    }
+    // fun()
+
+    //数组方法批量创建
+    var nlist = [];
+    for (var i = 0; i <= 100; i++) {
+        nlist.push('<a href="javascript:;">a</a>');
+    }
+    one.innerHTML = nlist.join(''); //通过join转换为字符串
+</script>
+
+</html>

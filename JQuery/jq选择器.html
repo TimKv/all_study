@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li></li>
+            <li>
+                <div></div>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ol>
+            <li></li>
+            <li class="one"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+    <div class="nav1">
+        <p>p</p>
+        <div>
+            <p>p.son</p>
+        </div>
+    </div>
+
+
+    <script>
+        $(function() {
+            console.log($('.nav'));
+            // 只获取子元素
+            console.log($('ul li'));
+            // 也获取孙子元素
+            console.log($('ul>li'));
+            $('ul li').css("background", "pink");
+
+            // 筛选器
+            $("ul li:first").css("color", "red");
+            $("ul li:eq(3)").css("color", "red");
+            $('ul li').eq(2).css('color', 'green');
+            $("ol li:odd").css("color", "blue");
+            $("ol li:even").css("color", "red");
+
+            // jq筛选方法
+            // 父亲
+            console.log($('.son').parent());
+            //只有儿子
+            $('.nav1').children('p').css("color", "red");
+            //不止儿子，全都可以找
+            $('.nav1').find('p').css("background", "pink");
+
+            //鼠标点击
+            $('.nav1>p').click(function() {
+                alert(11);
+            })
+
+            //选择除自己的兄弟元素
+            $('ol .one').siblings('li').css('background', 'green')
+
+            //判断有没有指定类名有true无false
+            console.log($('div:first').hasClass('nav'));
+
+            //重点记住 parent（） children（） find（） sibilings（） eq（）
+        })
+    </script>
+
+</body>
+
+</html>

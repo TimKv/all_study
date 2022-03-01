@@ -1,0 +1,4 @@
+事件的捕获阶段从最顶层到达最底层
+如：document->html->body->div
+时间的冒泡阶段，从最底层再到最上层
+如：document<-html<-body<-div

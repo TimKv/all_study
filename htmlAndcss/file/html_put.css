@@ -1,0 +1,28 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: powderblue;
+    border: red 10px solid;
+    margin-top: 10%;
+    overflow: auto;
+    margin-bottom: 100px;
+}
+
+.box>.one {
+    width: 50px;
+    height: 50px;
+    background-color: purple;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.line {
+    border: 10px red solid;
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    padding: 10%;
+    color: lawngreen;
+    display: inline-block;
+}

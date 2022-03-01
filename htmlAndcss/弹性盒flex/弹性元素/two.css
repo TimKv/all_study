@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul {
+    margin: 20px auto;
+    width: 600px;
+    border: 10px red solid;
+    display: flex;
+}
+
+li {
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    font-size: 50px;
+    text-align: center;
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px; */
+    /* 生长 收缩 指定长度 */
+    /* flex: auto; */
+    /*initial "flex:0 1 auto" 
+    auto "flex:1 1 auto" 
+    none "flex:0 0 auto" 无弹性属性
+     */
+}
+
+li:nth-child(1) {
+    order: 2;
+    /* 更改顺序 */
+}
+
+li:nth-child(2) {
+    background-color: cornsilk;
+    order: 3;
+}
+
+li:nth-child(3) {
+    background-color: cyan;
+    order: 1;
+}

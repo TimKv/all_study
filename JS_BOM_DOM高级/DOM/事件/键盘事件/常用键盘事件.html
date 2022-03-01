@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //keyup当按下按键松开时触发
+        document.addEventListener('keyup', function() {
+            console.log('我弹起了');
+        });
+        //keydown按下触发
+        document.addEventListener('keydown', function() {
+            console.log('我按下了');
+        });
+        //keypress按下触发,不能识别功能键如ctrl和shift等，功能键不能触发
+        document.addEventListener('keypress', function() {
+            console.log('我按下了press');
+        });
+        //三个事件执行顺序从前到后 keydown->keypress->keyup
+        //一下要用带on开头
+        document.onkeydown = function() {
+            console.log('我按下了press,用的是on');
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <span class="box_one">
+            x
+        </span>
+    </div>
+    <ul>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+    </ul>
+    <ol>
+        <li>first</li>
+        <li>one</li>
+        <li>one</li>
+        <li>last</li>
+    </ol>
+
+    <div class="one">我是div</div>
+    <span>我是span</span>
+
+</body>
+<script>
+    //获取父节点,最近的父节点，爷爷节点不是
+    var box_one = document.querySelector('.box_one');
+    var box = box_one.parentNode;
+    console.log(box);
+    //获取子节点
+
+    var ul = document.querySelector('ul');
+    var li = ul.childNodes; //获取所有子节点包括元素节点和文本节点等
+    console.log(li);
+    //获取元素节点
+    console.log(ul.childNodes[1].nedeType);
+    //只获取元素节点
+    var li_one = ul.children;
+    console.log(li_one);
+
+    //获取最后和第一个子节点
+    var ol = document.querySelector('ol');
+    console.log(ol.firstChild); //获取第一个节点不管是文本还是元素节点
+    console.log(ol.lastChild);
+    //获取第一个元素节点,ie9以上
+    console.log(ol.firstElementChild);
+    console.log(ol.lastElementChild);
+    //实际开发
+    console.log(ol.children[0])
+
+    //获取兄弟节点
+    var one = document.querySelector('.one');
+    console.log(one.nextSibling); //获取下一个节点
+    console.log(one.previousSibling); //获取上一个节点
+    //获取元素节点.ie9
+    console.log(one.nextElementSibling);
+    console.log(one.previousElementSibling);
+</script>
+
+</html>

@@ -1,0 +1,16 @@
+@one:200px;
+@color:red;
+@box:two;
+
+.one{
+    height: @one;
+    width: @one;
+    margin: @one auto;
+    background-color: @color;
+}
+.@{box}{
+    height: @one;
+    width: $height;
+    margin: @one auto;
+    background-color: @color;
+}

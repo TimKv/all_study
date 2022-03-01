@@ -1,0 +1,26 @@
+html {
+  width: 100px;
+  height: 100px;
+}
+html div {
+  width: 200px;
+  height: 200px;
+}
+.two {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  margin: 20px auto;
+}
+span {
+  color: #ff8080;
+}
+.two:hover {
+  background-color: #007f54;
+}
+.one01 {
+  width: 150px;
+  height: 200px/2;
+  background-color: blanchedalmond;
+}
+/*# sourceMappingURL=./two.css.map */

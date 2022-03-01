@@ -1,0 +1,17 @@
+html {
+    --color: rgb(105, 75, 124);
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-color: var(--color);
+}
+
+.two {
+    width: calc(200px/2);
+    height: 200px;
+    margin: 20px auto;
+    border: 10px var(--color) solid;
+}

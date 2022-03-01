@@ -1,0 +1,76 @@
+p {
+    color: aqua;
+}
+
+#one {
+    color: black;
+}
+
+#word {
+    color: blue;
+    font-size: 500%;
+}
+
+span.new {
+    color: blueviolet;
+}
+
+#tow,
+#tows {
+    color: brown;
+}
+
+#newone>span {
+    color: purple;
+    font-size: 200%;
+    font-size: bold;
+}
+
+#one+p {
+    color: red;
+}
+
+div[title=t_zero] {
+    color: seagreen;
+}
+
+ul>li {
+    color: slategray;
+    font-weight: bold;
+}
+
+ul>li:first-child {
+    color: springgreen;
+}
+
+ul>li:last-child {
+    color: steelblue;
+}
+
+ul>li:nth-child(3) {
+    color: tomato;
+}
+
+ul:last-of-type>li {
+    color: tomato;
+}
+
+ul:last-of-type>li:not(:nth-child(3)) {
+    color: black;
+}
+
+.a_one:link {
+    color: red;
+}
+
+.a_one:visited {
+    color: blueviolet;
+}
+
+.a_one:hover {
+    color: chartreuse;
+}
+
+.a_two:active {
+    color: cornflowerblue;
+}

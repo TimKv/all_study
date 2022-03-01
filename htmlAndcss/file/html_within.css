@@ -1,0 +1,13 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: thistle;
+    border: red solid;
+    padding: 100px 100px 100px 100px;
+}
+
+.box>.one {
+    background-color: purple;
+    width: 100%;
+    height: 100%;
+}

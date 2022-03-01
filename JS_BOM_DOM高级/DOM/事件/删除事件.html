@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        background-color: rebeccapurple;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+<script>
+    var div = document.querySelectorAll('div');
+    div[0].onclick = function() {
+        alert(11);
+        this.onclick = null //传统删除方式
+    }
+
+    //监听方式删除
+    div[1].addEventListener('click', fn);
+
+    function fn() {
+        alert(22);
+        this.removeEventListener('click', fn);
+    }
+
+    //ie8方法
+    div[2].attachEvent('onclick', fn1);
+
+    function fn1() {
+        alert(33);
+        div[2].detachEvent('onclick', fn1);
+    }
+</script>
+
+</html>

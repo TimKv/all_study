@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style></style>
+
+<body>
+    <ul>
+        <li>最初的</li>
+    </ul>
+
+
+</body>
+<script>
+    $(function() {
+        //创建元素
+        var li = $('<li>添加的</li>');
+        var lis = $('<li>添加的s</li>');
+        //添加元素
+        // 内部添加元素
+        $('ul').append(li); //内部添加放在内容的最后面
+        $('ul').prepend(lis); // 放在内容的最前面
+        // 外部添加元素
+        var div = $('<div>外部</div>');
+        var divs = $('<div>外部s</div>');
+        $('ul').after(div); //放在后面
+        $('ul').before(divs); //放在前面
+
+        // 删除元素
+        $('ul').remove(); //删除自己
+        $('ul').empty(); //删除匹配元素的子节点
+        $('ul').html("") //修改里面内容为一个空的字符串
+
+
+    })
+</script>
+
+</html>

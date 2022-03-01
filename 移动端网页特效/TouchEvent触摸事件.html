@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: palegoldenrod;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        //touchevent可以描述多个触点的增加和减少
+        var div = document.querySelector('div')
+        div.addEventListener('touchstart', function(e) {
+            console.log("我触碰了");
+            console.log(e);
+            //touches正在触摸屏幕所有手指的列表
+            //重点：targetTounches正在触摸当前dom元素的手指列表，在当前就是指div
+            //changedTouches手指状态改变的列表，从无到有或从有到无，拿开手指和放上手指
+            console.log(e.targetTouches[0]);
+            //targetTouches[0]就可以得到正在触摸dom元素的第一个手指的相关信息如手指坐标
+        });
+        div.addEventListener('touchend', function(e) {
+            console.log(e);
+            //chagedtouches和前两项不同
+            //当手指离开屏幕时，就没了touches和targetTouches列表
+            //但还是会有changedTouches
+        })
+    </script>
+</body>
+
+</html>

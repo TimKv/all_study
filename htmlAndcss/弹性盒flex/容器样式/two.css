@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul {
+    margin: 20px auto;
+    width: 800px;
+    height: 800px;
+    border: 10px red solid;
+    display: flex;
+    flex-wrap: wrap;
+    /* 超出换行 */
+    /* flex-flow： wrap和 diection简写
+    例子 flex-flow: row wrap */
+    /* justify-content: space-around; */
+    /* center居中排列
+    flex-start
+    flex-end 
+    space-around空白分配
+    space-between
+    space-evenly*/
+    /* align-items: flex-start; */
+    /* stretch默认，将元素长度设置相同
+    flex-start不会拉伸，沿着铺轴起边对齐
+    flex-end
+    center
+    baseline基线对齐
+     */
+    /* justify-content: center;
+    align-items: center; 
+    单个元素居中对齐*/
+    /* align-content: center;
+    属性与justify-content一样 */
+}
+
+li {
+    width: 200px;
+    /* height: 200px; */
+    background-color: cornflowerblue;
+    font-size: 50px;
+    text-align: center;
+    line-height: 200px;
+    flex-shrink: 0;
+}
+
+li:nth-child(1) {
+    align-self: stretch;
+    /* 与上述属性一致 */
+}
+
+li:nth-child(2) {
+    background-color: cornsilk;
+}
+
+li:nth-child(3) {
+    background-color: cyan;
+}

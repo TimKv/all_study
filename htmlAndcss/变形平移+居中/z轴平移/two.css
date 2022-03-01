@@ -1,0 +1,21 @@
+body {
+    perspective: 800px;
+}
+
+.one {
+    width: 200px;
+    height: 200px;
+    background-color: beige;
+    margin: 50px auto;
+    transform: translateZ(100px);
+}
+
+.two {
+    width: 200px;
+    height: 200px;
+    background-color: beige;
+    margin: 50px auto;
+}
+
+
+/* 需要设置视距才能显示z轴的平移效果 */

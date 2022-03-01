@@ -1,0 +1,32 @@
+div {
+    color: darkgreen;
+    font-weight: bold;
+    background-color: darkmagenta;
+}
+
+p {
+    color: red
+}
+
+div,
+p {
+    color: blue;
+}
+
+#one {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.one_in {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(22, 33, 44, .2);
+}
+
+.two_in {
+    width: 50%;
+    height: 50%;
+    background-color: hsla(100, 50%, 20%, .2);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: palegoldenrod;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        //touchstart触碰元素触发 
+        //元素上滑动触发touchmove
+        //touchend手指移开
+        var div = document.querySelector('div')
+        div.addEventListener('touchstart', function() {
+            console.log("我触碰了");
+        });
+        div.addEventListener('touchmove', function() {
+            console.log("我一直触碰");
+        });
+        div.addEventListener('touchend', function() {
+            console.log("我移开了");
+        });
+    </script>
+
+
+</body>
+
+</html>

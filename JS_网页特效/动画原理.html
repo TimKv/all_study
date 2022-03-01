@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        position: absolute;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-color: bisque;
+    }
+    
+    button {
+        margin-top: 300px;
+    }
+</style>
+
+<body>
+    <div></div>
+    <button>开始运动</button>
+    <button>停止</button>
+    <button>复原</button>
+    <script>
+        //1.获取盒子当前位置
+        //2.让盒子在当前位置加上一个移动距离
+        //3.利用定时器重复
+        //4.结束定时器
+        //5.需要添加定位才能使用element.style.left
+        var div = document.querySelector('div');
+        var btn = document.querySelectorAll('button');
+        var time = null;
+        btn[0].addEventListener('click', function() {
+            clearInterval(time);
+            time = setInterval(function() {
+                div.style.left = div.offsetLeft + 1 + 'px'
+            }, 10);
+        });
+        btn[1].addEventListener('click', function() {
+            clearInterval(time);
+        })
+        btn[2].addEventListener('click', function() {
+            div.style.left = 0 + 'px';
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var num = 10
+
+    function fun() {
+        var num;
+        alert(num);
+    }
+
+    fun()
+
+    function f1() {
+        var a = b = c = 1;
+        //相当于 var a = 9;b = 9; c = 9
+        // b和c没有声明
+        //此时a属于局部变量而b和c属于全局变量
+    }
+    f1()
+    console.log(b)
+    console.log(c)
+    console.log(a)
+</script>
+
+<body>
+
+</body>
+
+</html>

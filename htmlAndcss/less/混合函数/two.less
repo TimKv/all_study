@@ -1,0 +1,27 @@
+// 引入其他的less
+@import "three(try).less";
+
+.one(@a, @b, @c: aquamarine) {
+    width: @a;
+    height: @b;
+    background-color: @c;
+    margin: 20px auto;
+}
+
+.two {
+    .one(@a: 200px, 200px)
+}
+
+span {
+    color: average(red, white);
+}
+
+.two:hover {
+    background-color: darken(aquamarine, 50%);
+}
+
+.one01 {
+    width: 200px - 50px;
+    height: 200px/2;
+    background-color: blanchedalmond;
+}

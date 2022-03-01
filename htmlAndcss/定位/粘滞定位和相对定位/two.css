@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.box1,
+.box2,
+.box {
+    height: 200px;
+    width: 200px;
+}
+
+.box {
+    background-color: aquamarine;
+    position: sticky;
+    top: 0;
+}
+
+.all {
+    background-color: red;
+    position: relative;
+    height: 600px;
+    width: 600px;
+}
+
+.box1 {
+    background-color: bisque;
+    position: absolute;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* 上下左右居中 */
+    /*相对于包含块定位*/
+    /*子随父定*/
+}
+
+.box2 {
+    background-color: cadetblue;
+    width: 150px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.text {
+    background-color: aquamarine;
+    margin: 0 auto;
+    width: 500px;
+}

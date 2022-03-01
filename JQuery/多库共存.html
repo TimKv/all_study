@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style></style>
+
+<body>
+    <div></div>
+
+
+</body>
+<script>
+    $(function() {
+        //当存在与别的库函数$冲突时,jq可以把$改为jQuery，如jQuery('div')
+
+        //或者把$改为用户自定义的名字如,报错把$改为jQuery
+        var anything = $.noConflict();
+        anything('div');
+
+    })
+</script>
+
+</html>

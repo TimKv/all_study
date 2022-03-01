@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+</head>
+<style>
+    .current {
+        background-color: aquamarine;
+        width: 300px;
+        height: 300px;
+    }
+    
+    div {
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    <div>wo</div>
+    <div>you</div>
+    <div>who</div>
+
+</body>
+<script>
+    $(function() {
+        // 添加类名,不会删除原类名
+        $('div').eq(0).click(function() {
+            $(this).addClass('current');
+        });
+        // 删除类名
+        $('div').eq(1).click(function() {
+            $('div').eq(0).removeClass('current');
+        });
+        //切换类
+        $('div').eq(2).click(function() {
+            $('div').eq(0).toggleClass('current');
+        });
+
+
+    });
+</script>
+
+</html>
