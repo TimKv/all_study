@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var twoSum = function (nums, target) {
+            var newdata = 0
+            for (var i = 0; i < nums.length; i++) {
+                console.log(nums[i]);
+                for (var j = i+1; j < nums.length; j++) {
+                    console.log(nums[j]);
+                    if (nums[i] + nums[j] === target) {
+                        var newdata = [i, j];
+                        break;
+                    }
+                }
+                if (newdata != 0) {
+                    return newdata
+                }
+            }
+        }
+
+        console.log(twoSum([3,2,4],6));
+    </script>
+</body>
+
+</html>

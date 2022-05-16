@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // await必须配合async使用
+        async function main(){
+            let p = new Promise((resolve,reject)=>{
+                // resolve('ok');
+                // 收到非promise值返回这个值
+                // 收到成功转态promise返回成功转态并返回resolve传递的值
+                // await收到错误状态需要通过try catch抛出
+                reject('err')
+            })
+            try {
+                let res = await p;
+            } catch (error) {
+                console.log(error);
+            }
+            
+            
+        }
+        main()
+
+    </script>
+</body>
+</html>

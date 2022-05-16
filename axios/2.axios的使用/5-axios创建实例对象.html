@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button>get</button>
+    <button>post</button>
+    <button>put</button>
+    <button>delete</button>
+    <script>
+        // axios.request的使用,与axios差不多
+        const btn = document.querySelectorAll('button')
+
+        // 创建实例对象 /getJoke
+        const duanzi = axios.create({
+            baseURL:'https://api.apiopen.top',
+            timeout:2000
+        })
+        // 这里duanzi与axios对象功能几近一样的
+        // duanzi({
+        //     url:'getJoke',
+        // }).then(response=>{
+        //     console.log(response);
+        // })
+        // 与上面功能一致
+        duanzi.get('/getJoke').then(response=>{
+            console.log(response);
+        })
+       
+    </script>
+
+</body>
+
+</html>

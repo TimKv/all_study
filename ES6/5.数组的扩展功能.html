@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // 数组方法 from() of()
+        // from()将伪数组转化为真正的数组
+        function fn() {
+            let arr = Array.from(arguments)
+            console.log(arr);
+
+        }
+        fn(1, 2, 3)
+
+        // from还可以接受第二个参数可以获取
+        let lis = document.querySelectorAll('li')
+        // textContent 属性设置或者返回指定节点的文本内容
+        // 第二个参数可以直接获取lis中的数据，并会返回第二个参数函数的返回值
+        let liContents = Array.from(lis, el => el.textContent)
+        console.log(liContents); //(4) ['1', '2', '3', '4']
+
+        // of() 将任意的数据类型转换为数组
+        console.log(Array.of(3, 11, [1, 2], { id: 1 }));
+
+        // copywithin()将数组1内部的值复制到指定位置
+        // 将从索引三的元素7开始后面所有的元素覆盖从索引0开始的元素
+        // 也就是7 4 5 6 8 9 6 8 9
+        let a = [1, 2, 3, 7, 4, 5, 6, 8, 9].copyWithin(0, 3)
+        console.log(a);
+
+        // find()返回满足条件的第一个元素
+        let num = [1, 2, -10, -20, 1].find(n => n < 0)
+        console.log(num); //-10
+        // findIndex()返回满足条件的第一个元素的索引值
+        let num1 = [1, 2, -10, -20, 1].findIndex(n => n < 0)
+        console.log(num1); //2
+
+        // entries() keys() values() 返回一个遍历器，可以通过for...of遍历
+        // keys()遍历键
+        // values()遍历值
+        // entries()遍历键值对
+
+        console.log('------------------------------------------');
+
+        for (const index of ['a', 'b'].keys()) {
+            console.log(index);
+        }
+
+        for (const index of ['a', 'b'].values()) {
+            console.log(index);
+        }
+
+        for (const [index, indexs] of ['a', 'b'].entries()) {
+            console.log(index, indexs);
+        }
+        let letter = ['a', 'b', 'c']
+        let it = letter.entries();
+        // next()像指针一样会向下移
+        console.log(it.next().value);//[0, 'a']
+        console.log(it.next().value);//[1, 'b']
+        console.log(it.next().value);//[2, 'c']
+        console.log(it.next().value);//undefined
+
+
+        console.log('------------------------------------------');
+
+        // 判断是否包含指定元素 includes()
+        console.log([1,2,3].includes(2));
+        console.log([1,2,3].includes('2'));
+
+        // 之前通过indexOf
+        // 不包含返回-1，包含返回索引值
+        console.log([1,2,3].indexOf('2'));//-1
+        console.log([1,2,3].indexOf(1));//1
+
+
+
+    </script>
+
+</body>
+
+</html>

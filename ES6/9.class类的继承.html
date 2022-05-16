@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es6创建类
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age
+            }
+            sayname() {
+                return this.name
+            }
+            sayage() {
+                return this.age
+            }
+        }
+
+        // 通过extends继承父类
+        class Dog extends Animal {
+            constructor(name, age, color) {
+                // super(name,age)相当于Animal.call(this,name,age)
+                super(name, age)
+                this.color = color
+            }
+            saycolor() {
+                return this.color
+            }
+            // 重写父方法
+            sayname(){
+                // super.sayage为父类中的sayage方法
+                // super.sayage为调用父类中的sayage方法
+                return this.name + super.sayage()
+            }
+
+            // 重载
+            // remothed(a,b){
+            //     console.log(a,b);
+            // }
+            // remothed(a,b,c){
+            //     console.log(a*b*c);
+            // }
+            // 像这种java的重载写法会直接覆盖函数
+
+            // js实现重载
+            add(...tim){
+                if(tim.length === 1){
+                    console.log(`这是1个参数 ${tim[0]}`);
+                }else if(tim.length === 2){
+                    console.log(`这是2个参数 ${tim[0]},${tim[1]}`);
+                }else if(tim.length === 3){
+                    console.log(`这是3个参数 ${tim[0]},${tim[1]},${tim[2]}`);
+                }
+            }
+        }
+
+        // 重写父对象的方法后父对象的方法不会收影响
+        let anm = new Animal('动物',20)
+        console.log(anm.sayname());
+
+        let dog = new Dog('小狗', 10, 'yellow')
+
+        console.log(dog.sayname());
+        
+        console.log(dog.saycolor());
+
+        dog.add(1,2,3)
+        dog.add(1,2)
+        dog.add(1)
+        
+
+
+    </script>
+</body>
+
+</html>

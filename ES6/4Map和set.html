@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 集合表示无重复值得有序列表
+        let set = new Set()
+        console.log(set);
+
+        // 添加元素,不会有重复
+        set.add(2)
+        set.add('2')
+        set.add('2')
+        set.add(['hello', 2, 3])
+        // 删除
+        set.delete(2)
+        // 判断是否有该元素
+        console.log(set.has('2'));
+        console.log(set);
+        //遍历
+        // set中有数组遍历数组，没数组遍历其中的元素
+        // set的每一项同时会被认为是value也是key，所有foreach遍历key和val相同
+        set.forEach((val, key) => {
+            console.log(val);
+            console.log(key);
+        })
+
+        // 将数组转换为set完成去重后再转换回数组
+        const set1 = new Set([1, 1, 1, 2, 2, 2, 3, 3, 3])
+        const arr = [...set1]
+        console.log(arr);
+
+        // set中对象的引用无法被释放
+        let set2 = new Set(), obj = {};
+        set2.add(obj);
+        // js通过把对象置为null来释放当前资源
+        obj = null
+        console.log(set2);//obj无法被释放
+
+        // weakSet可以释放，但功能远少于set
+        // 并不能传入费对象类型的参数
+        // 不可迭代，不能遍历
+        // 没有foreach
+        // 没有size
+        let set3 = new WeakSet(), obj1 = {};
+        set3.add(obj1);
+        obj1 = null
+        console.log(set3);//obj可以被释放
+
+        // Map类型是键值对的有序列表，键和值是任意类型
+        let map = new Map();
+        map.set('name', 'one')
+        map.set('age', 20)
+        console.log(map.get('name'),'map.get');
+        console.log(map);
+        console.log(map.has('name'),'map.has');
+        map.clear()
+        console.log(map);
+
+        // Map(2) {'a' => 1, 'b' => 2}
+        let map1 = new Map([
+            ['a', 1],
+            ['b', 2]
+        ])
+        console.log(map1);
+
+    </script>
+
+</body>
+
+</html>

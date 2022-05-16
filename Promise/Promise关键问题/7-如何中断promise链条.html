@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('OK')
+                // reject('ERR')
+            }, 1000)
+        })
+
+        p.then(value => {
+            console.log(111);
+            //中断promise链条的方法只有一个就是返回一个pending状态的promise对象，这样就不会给下面的then传递状态也就不会再向下执行
+            return new Promise(()=>{})
+        }).then(value => {
+            console.log(222);
+        }).then(value => {
+            console.log(333);
+        }).catch(reason => {
+            console.warn(reason);
+        })
+
+    </script>
+</body>
+
+</html>

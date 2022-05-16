@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let car = {
+            wheel:4,
+            set(value){
+                this.wheel = value
+            },
+            get(){
+                return this.wheel
+            }
+        }
+        car.set(6)
+        console.log(car.get());
+
+
+        const obj = {};
+        const name = 'a';
+        obj[name+'bc'] = 123;
+        console.log(obj,'obj');
+
+        const obs = {
+            isSHow:true,
+            [name+'bc']:123,
+            ['f'+name](){
+                console.log(this);
+            }
+        }
+
+        console.log(obs,'obs');
+
+
+        // 对象的方法
+        // is()  相当于=== 但（NAN ===NAN）为false，但用is（）为true，严格相等
+        console.log(Object.is(NaN,NaN));
+        // assign() 对象合并将后面的都合并到第一个，浅拷贝
+        let newObj = Object.assign({},{a:1},{b:2})
+        console.log(newObj,'NewObj');
+    </script>
+    
+</body>
+</html>

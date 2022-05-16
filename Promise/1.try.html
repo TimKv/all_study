@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>a</button>
+    <script>
+        const btn = document.querySelector('button')
+        // 封装异步任务
+        btn.addEventListener('click', function () {
+            // promise可以包裹一个异步操作
+            const p = new Promise((resolve, reject) => {
+                // 成功调用resolve，失败调用reject
+                setTimeout(()=>{
+                    let n = Math.random()*100;
+                    if(n<=30){
+                        // resolve和reject可以传递参数给then
+                        resolve(n)
+                    }else{
+                        reject(n)
+                    }
+                },500)
+            }).
+            // then方法
+            // 第一个参数为成功的回调，第二个参数为失败的回调
+            then((value)=>{
+                alert('成功')
+                console.log(value,'value');
+            },(err)=>{
+                alert('失败')
+                console.log(err,'err');
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        ------------------------flex container-------------------------
+         1.flex-flow 是flex-direction || flex-wrap的简写，可以只写其中一个的值
+
+         2.flex-direction 设置主轴（main axis）的方向
+
+         3、flex-wrap 设置是否能换行
+
+         4、justify-content 设置flex子元素在main axis上的对齐方式
+
+         5、align-item 设置flex子元素在cross axis上的对齐方式（一般针对单行）
+
+         6、align-content 设置flex子元素在cross axis上的对齐方式（一般针对多行）
+
+        ------------------------flex items-------------------------         
+         7、flex 是flex-grow flex-shrink?|| flex-basis的简写
+
+         8、flex-grow 决定了flex子元素在main axis 方向上如何扩展
+
+         9、flex-shrink 决定了flex子元素在main axis方向上如何收缩
+
+         10、flex-basis 设置flex子元素在main axis方向上的base size
+            
+         11、order 设置flex item的排布顺序
+
+         12、align-self允许flex items覆盖 flex container设置的align-items
+     -->
+
+
+
+
+    <style>
+        .container {
+            border: 1px red solid;
+            width: 500px;
+            height: 500px;
+            margin-left: 10px;
+            margin-top: 10px;
+            /* 为父元素设置display: flex;子元素开启弹性定位 */
+            display: flex;
+
+            /* flex-direction决定了main axios的方向
+            row可以理解为flex中的子元素从左到右排布
+            row-reverse从右到左
+            column从上到下
+            column-reverse从下到上 */
+            /* 注意第一个元素永远在主轴方向第一个，也就是
+            设置 flex-direction: row-reverse; */
+            flex-direction: row;
+
+
+            /* justify-contentflex中子元素的对齐方式 */
+            /* flex-start与main start对齐也就是flex-direction决定的方向
+            例如row中main start在左也就是左对齐 */
+            /* flex-end就是跟main end对齐，row就是右对齐 */
+            /* center沿着主轴居中对齐 */
+            /* space-between沿着主轴两端对齐，flex子元素之间的距离相等 */
+            /* space-evenly子元素距离相同，子元素与main start和main end之间的距离等于子元素之间距离 */
+            /* space-around效果跟evenly一致，只是子元素与main start和main end之间的距离等于子元素之间距离的一半 */
+            /* 实现左右居中 */
+            /* justify-content: center; */
+
+            /* align-items决定了flex子元素在cross axis上的对齐方式 */
+            /* cross axis与主轴垂直只可能是向右或向下，主轴向右，cross axis向下，始终与主轴垂直 */
+            /* 如果cross axis方向为从上到下 flex-start为上，flex-end为下 */
+            /* flex-start与cross start对齐 */
+            /* flex-end与cross end对齐 */
+            /* center在cross axis与主轴的交叉处居中对齐 */
+            /* baseline 与基线对齐，基线就是文字底边的线，基线对齐就是flex子元素根据内部文字的底部进行对齐 */
+            /* stretch（默认值）当flex items 在cross axis方向的size为auto时会自动填flex container */
+            /* 意思就是如果 width：auto的话子元素的宽度会自动延伸占满flex父元素的宽
+            height：auto的话子元素的高度会自动延伸占满flex父元素高度
+            height和width都设置为auto则会自动填充满整个flex父元素 */
+            /* align-items:center; */
+
+            /* 最终实现水平居中对齐 */
+            /* 实现左右居中 */
+            /* justify-content: center; */
+            /* 实现上下居中 */
+            /* align-items:center; */
+
+            /*flex-wrap设置单行还是多行 */
+            /* no-wrap为默认值，默认单行，超出flex父元素宽度的话flex子元素就会收缩
+            wrap多行，超出当前父元素的宽度就会换行
+            没超出部分在cross-start 超出部分在cross-end，也就是没超出在上，超出在下*/
+            /* 设置wrap-reserve后cross-start和cross-end会反过来，也就是没超出在下，超出在上 */
+            flex-wrap: wrap;
+
+            /* 设置多行对齐方式与justify-content类似，相比于justify-content设置主轴对齐，align-content设置交叉轴对齐
+            stretch为默认值意思为拉伸，在把高度更改为auto就可以自动拉伸填充父元素了，
+            flex-start center flex-end space-between space-around stretch的使用方法与justify-content一致 */
+            align-content: flex-start;
+
+            /* flex-wrap:wrap设置后换行之所以间隔很多不能紧贴是因为align-content的默认值为stretch
+            想要换行紧贴则需要设置align-content: flex-start; */
+
+           
+
+        }
+
+        .item {
+            /* 通过max-width，max-height可以设置flex-grow设置的宽度最多不可以超过的值 */
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            /* order为设置flex子元素排布顺序,所有flex子元素默认为0,
+            越小排的越前 */
+            /* align-self: 用来覆盖flex父元素设置的align-items，设置的属性以align-items一样 */
+
+            /* flex-grow当主轴方向有剩余空间才能设置 */
+            /* 可以设置占据比例 */
+            /* flex-grow设置所有flex子元素的值大于1按照比例，小于1直接乘
+            0.2+0.2+0.8大于1直接按照1:1:4的比例分配剩余空间 */
+            /* 当然flex-grow加起来小于1时也会犯flex-shrink的问题
+             也就是当需要填充的size为100px时，而三个items为0.1,0.1,0.1时，只填充了100px的0.3也就是30px*/
+
+            /* flex-shrink 当flex中子元素的size等大于父元素的size就会开启，默认为1（非负可以是小数） 
+             flex-shrink:1时当五个子元素一共超出100px则每个收缩20px 
+             收缩比例不是flex-shrink而是flex-shrink * item的width
+
+             例如下面三个item超出父元素100px
+             以下公式只适用于items的flex-shrink之和不小于1
+             sum = (110*1 + 120*2 + 130*3)
+             比如 item1的width：110px,flex-shrink:1 收缩比例 100*(110*1)/sum
+             比如 item1的width：120px,flex-shrink:2 收缩比例 100*(120*1)/sum
+             比如 item1的width：130px,flex-shrink:3 收缩比例 100*(130*1)/sum
+             当items的flex-shrink之和小于1比如三个item元素的flex-shrink分别为0.1 0.1 0.1
+             那收缩比例多一个乘以item的flex-shrink值得步骤
+             如 100*0.1*(110*1)/sum，就在原来的基础上多个*0.1
+             也就是当三个items的flex-shrink加起来等于0.3，也就是说本来应该收缩100px，现在只收缩了100px的0.3也就是30px
+             */
+
+             /* flex-basis:100px 根据主轴的方法设置高度或宽度，当主轴向右，设置的是宽度，当主轴向下，设置的是高度
+             也可以设置为auto或content效果一样，子元素的size取决于其中内容的大小，比如你其中的内容就20px，那子元素也就20px
+             flex-basis优先级高于width这些，当然优先级最高的是max-width这些东西 */
+
+             /* flex是flex-grow flex-shrink?|| flex-basis的简写 默认为flex:0 1 auto
+             其中flex-shrink可有可无 ，写none相当于0 0 auto*/
+
+        }
+
+        .item:nth-of-type(1) {
+            background-color: #0f0;
+            
+            flex-grow:0.2;
+            
+            /* 收缩不能小于min-width 这类的min-size属性*/
+            flex-shrink: 1;
+        }
+
+        .item:nth-of-type(2) {
+            background-color: #ff0;
+            order:1;
+            flex-grow:0.2;
+        }
+
+        .item:nth-of-type(3) {
+            background-color: #0ff;
+            flex-grow:0.2;
+            
+        }
+
+        .item:nth-of-type(4) {
+            background-color: rgb(68, 131, 131);
+            /* align-self: flex-end; */
+            order:-1;
+        }
+
+        .item:nth-of-type(5) {
+            background-color: #0ff;
+        }
+
+        .item:nth-of-type(6) {
+            background-color: rgb(68, 131, 131);
+        }
+
+        .item:nth-of-type(7) {
+            background-color: rgb(13, 231, 231);
+        }
+    </style>
+    <div>只要有align属性都是针对cross轴的</div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+
+</body>
+
+</html>

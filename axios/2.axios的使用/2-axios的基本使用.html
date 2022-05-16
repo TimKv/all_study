@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button>get</button>
+    <button>post</button>
+    <button>put</button>
+    <button>delete</button>
+    <script>
+        const btn = document.querySelectorAll('button')
+
+        btn[0].addEventListener('click', () => {
+            axios({
+                method: 'get',
+                url: 'http://localhost:3000/posts/1',
+            }).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.log(err);
+            });
+        })
+
+        // 通过data添加数据
+        btn[1].addEventListener('click', () => {
+            axios({
+                method: 'post',
+                url: 'http://localhost:3000/posts',
+                data: {
+                    title: '你好',
+                    author: 'tim'
+                }
+            }).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.log(err);
+            });
+        })
+
+        // 通过put更新数据
+        btn[2].addEventListener('click', () => {
+            axios({
+                method: 'PUT',
+                url: 'http://localhost:3000/posts/3',
+                data: {
+                    title: '你好',
+                    author: 'timkv'
+                }
+            }).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.log(err);
+            });
+        })
+
+        // 删除数据
+        btn[3].addEventListener('click', () => {
+            axios({
+                method: 'delete',
+                url: 'http://localhost:3000/posts/6'
+            }).then((result) => {
+                console.log(result);
+            }).catch((err) => {
+                console.log(err);
+            });
+        })
+    </script>
+
+</body>
+
+</html>

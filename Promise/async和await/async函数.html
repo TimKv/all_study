@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function main() {
+            // 1、async定义的函数返回的是一个promise对象
+            // async返回的状态由定义的函数中的return决定return一个reject状态的promise对象，async状态就是reject状态
+            // 抛出异常也是失败的异常
+            return new Promise((resolve,reject)=>{
+                reject('error')
+            })
+        }
+        let result = main();
+        result.catch((err)=>{
+            console.log(err);
+        })
+        console.log(result);
+    </script>
+
+</body>
+
+</html>

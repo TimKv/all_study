@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es5创建类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age
+        }
+        Person.prototype.sayName = function () {
+            return this.name
+        }
+        let p1 = new Person('tim', 20)
+        console.log(p1.sayName());
+
+        // es6创建类
+        class newPerson{
+            constructor(name,age){
+                this.name = name;
+                this.age = age
+            }
+            sayname(){
+                return this.name
+            }
+            sayage(){
+                return this.age
+            }
+        }
+
+        // 通过Object.assign()方法向类添加多个方法
+        // Object.assign({},{a:1},{b:2})将后两个对象合并到第一个空对象中
+        Object.assign(newPerson.prototype,{
+            putname(){
+                console.log(this.name);
+            },
+            putage(){
+                console.log(this.age);
+            }
+        })
+
+        // 在原型对象中添加的属性所有子对象都能访问
+        newPerson.prototype.name01 = 'wo'
+
+        let p2 = new newPerson('timkv','22')
+        console.log(p2);
+        console.log(p2.sayname());
+        p2.putage()
+        console.log(p2.sayname());
+        console.log(p2.name01);
+        console.log(p2.__proto__);
+
+        // 更改原型对象添加的属性
+        newPerson.prototype.name01 = 'wode'
+        console.log(p2.name01);
+        console.log(p2.__proto__);
+
+    </script>
+</body>
+
+</html>

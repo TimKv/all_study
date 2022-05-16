@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原始数据类型Symbol，它表示是独一无二的值
+        // 最大的用途：用来定义对象的私有变量
+        const name = Symbol('name')
+        const name1 = Symbol('name')
+        console.log(name === name1); //false
+
+        let s1 = Symbol('s1')
+        console.log(s1);
+        // 两种方法写入symbo属性
+        let obj = {
+            [s1]:'你好' //不能遍历
+        }
+        // obj[s1] = '你好'
+        
+        // 如果用symbol定义的对象中的变量，一定要用[变量名]的方式使用
+        console.log(obj[s1],obj);
+
+        // 通过以下方法来看obj中的key,不会出现symbol类型的key
+        console.log(Object.keys(obj));
+
+        // ;通过symbol的特殊方法来获取
+        let s = Object.getOwnPropertySymbols(obj)
+        console.log(s,s[0]);
+
+        // 还可以通过反射来获取
+        let s2 = Reflect.ownKeys(obj)
+        console.log(s2,'s2');
+    </script>
+    
+</body>
+</html>

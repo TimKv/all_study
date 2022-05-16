@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Iterator
+        // 一种新的遍历
+        // 通过Symbol.iterator创建迭代器，再通过next方法进行迭代
+
+        // 使用迭代
+        let ary = ['one','two','tree']
+        const item = ary[Symbol.iterator]()
+        console.log(item.next());
+        console.log(item.next());
+        console.log(item.next());
+        console.log(item.next());
+
+    </script>
+    
+</body>
+</html>

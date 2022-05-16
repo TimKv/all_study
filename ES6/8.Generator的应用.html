@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+</head>
+
+<body>
+    <button>
+        a
+    </button>
+    <script>
+        const reqs = axios.create({
+            baseURL: 'https://api.apiopen.top',
+            timeout: 2000
+        })
+
+        // 需要在请求中套请求，回调地狱，异步操作，操作完这一步再下一步
+        // reqs.get('/getJoke').then((result) => {
+        //     console.log(result);
+
+        //     reqs.get('/getJoke').then((result) => {
+        //         console.log(result);
+
+        //         reqs.get('/getJoke').then((result) => {
+        //             console.log(result);
+        //         })
+        //     })
+
+        // }).catch((err) => {
+        //     console.log(err);
+        // });
+
+        // ajax的异步同步化
+        // function* main() {
+        //     let res = yield request('/getJoke')
+        //     console.log('执行完成');
+        // }
+        // const ite = main()
+        // ite.next();
+        // function request(url) {
+        //     reqs.get(url).then((result) => {
+        //         console.log(result);
+        //         ite.next()
+        //     }).catch((err) => {
+        //         console.log(err);
+
+        //     });
+        // }
+
+        function* load() {
+            loadUi()
+            yield showDate()
+            hideUi()
+        }
+        const item = load()
+        item.next()
+
+        //  loading案例的异步同步化
+        function loadUi() {
+            console.log('加载load页面');
+        }
+        function showDate() {
+            setTimeout(() => {
+                console.log('加载完成');
+                item.next()
+            }, 2000)
+        }
+        function hideUi() {
+            console.log('隐藏ui');
+        }
+    </script>
+</body>
+
+</html>

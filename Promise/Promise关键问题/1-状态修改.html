@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 除了resolve和reject可以改变promise对象的状态
+        // 抛出错误也可以改变promise对象的状态
+        let p = new Promise((resolve,reject)=>{
+            throw '错误';
+        })
+        console.log(p);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // generator函数 可以通过yield关键字，将函数挂起，微课改变执行流提供了可能，为异步编程提供了方案
+        // 与普通函数区别
+        // 1function后面 函数名之前加个*
+        // 2只能在函数内部使用yield表达式，让函数挂起
+
+        function * fn(){
+            // 第一次执行next会执行console.log('one');
+            console.log('one');
+            yield 2
+            // 第二次执行next会执行console.log('two');
+            console.log('two');
+            yield 3
+            // 第三次执行next会执行console.log('three');
+            console.log('three');
+        }
+        let fun = fn();
+        console.log(fun.next().value); //{value:2,done:false} 通过value可以访问yield 2中的值
+        console.log(fun.next()); //{value:undefined,done:true}
+
+        function *fun2(){
+            console.log('start');
+            let x = yield '2' //yield可以获取当前next中传递的参数
+            console.log('one:'+x);
+            let y = yield '3'
+            console.log('two:'+y);
+            return x + y
+        }
+        let fun1 = fun2()
+        // 第一次next时 函数开始执行 执行console.log('start');
+        // 第二次next时 执行console.log('one:'+x)
+        // 第三次next时 执行console.log('two:'+y);
+        console.log(fun1,'fun1');
+        console.log(fun1.next());
+        console.log(fun1.next(20)); //next中的参数会传递到yield '2' 中
+        // 最后一个的value值为return x + y
+        console.log(fun1.next(30)); //next中的参数会传递到yield '3' 中
+
+        // 使用场景为不具备Interator迭代器接口的对象提供了遍历操作
+        // for…of循环可以自动遍历 Generator 函数运行时生成的Iterator对象，且此时不再需要调用next方法
+        function *objectEle(obj) {
+            const prokeys = Object.keys(obj);
+            for(const prokey of prokeys){
+                
+                yield [prokey,obj[prokey]]
+            }
+        }
+        const obj = {
+            name:'tim',
+            age:21
+        }
+        // 为obj添加Symbol.iterator方法
+        obj[Symbol.iterator] = objectEle
+        console.log(obj);
+        
+        for(let [key,value] of objectEle(obj)){
+            console.log(`${key},${value}`);
+        }
+
+
+    </script>
+    
+</body>
+</html>

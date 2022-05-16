@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "开始",
+      "author": "TimKv"
+    },
+    {
+      "title": "你好",
+      "author": "timkv",
+      "id": 3
+    },
+    {
+      "title": "你好",
+      "author": "tim",
+      "id": 4
+    },
+    {
+      "title": "你好",
+      "author": "tim",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "喝喝赫",
+      "postId": 2,
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

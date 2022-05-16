@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>one</button>
+    <script>
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click',()=>{
+            const p = new Promise((resolve,reject)=>{
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET','https://api.apiopen.top/getJoke');
+                xhr.send()
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState === 4){
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            // 成功传入响应体
+                            resolve(xhr.response)
+                        }else{
+                            // 失败输出响应状态码
+                            reject(xhr.status)
+                        }
+                    }
+                }
+            }).then((result)=>{
+                console.log(result);
+            },(err)=>{
+                console.warn(err);
+            })
+        })
+    </script>
+    
+</body>
+</html>
